@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life is Strange - RPG</title>
+    <link rel="stylesheet" href="CSS/style.CSS">
+    <link rel="stylesheet" href="CSS/ficha.CSS">
+    <link rel="icon" href="/img/Fav-icon.png" type="image/png">
+</head>
+<body>
+
+    <div id="selection-screen" class="character-selection">
+        <div class="card max" onclick="askPassword('max')">
+            <img src="img/Max.webp" alt="Max">
+            <div class="info">
+                <h3>Max Caulfield</h3>
+                <p>A Observadora</p>
+            </div>
+        </div>
+
+        <div class="card chloe" onclick="askPassword('chloe')">
+            <img src="img/Cloe.webp" alt="Chloe">
+            <div class="info">
+                <h3>Chloe Price</h3>
+                <p>A Rebelde</p>
+            </div>
+        </div>
+
+        <div class="card warren" onclick="askPassword('warren')">
+            <img src="img/Warren.webp" alt="Warren">
+            <div class="info">
+                <h3>Warren Graham</h3>
+                <p>O Especialista</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="password-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-title">Acesso Restrito</h2>
+            <p id="modal-hint" class="hint-text"></p>
+            <input type="password" id="pass-input" placeholder="Digite o código...">
+            <div class="modal-btns">
+                <button onclick="confirmPassword()" class="confirm-btn">Desbloquear</button>
+                <button onclick="closeModal()" class="cancel-btn">Abortar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="char-sheet" class="sheet-container" style="display: none;">
+        <button class="back-btn" onclick="closeSheet()">← Voltar ao Menu</button>
+        <div id="sheet-content"></div>
+    </div>
+
+    <script src="JS/Script.js"></script>
+</body>
+</html>
