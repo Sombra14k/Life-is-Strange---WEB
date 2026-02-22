@@ -46,10 +46,40 @@ const characters = {
     gostos: "Ficção científica e química.",
     interesses: "Apoiar o grupo.",
     amor: "Max Caulfield"
+  },
+  kate: {
+    title: "Kate Marsh (Suporte)",
+    sub: "A Consciência",
+    img: "img/Icon-Kate.jpeg",
+    bg: "img/4.jpeg",
+    desc: "Kate possui uma sensibilidade única. Sua força vem da fé e da resiliência, atuando como a luz moral do grupo em tempos sombrios.",
+    attr: "AG 1 | FOR 1 | INT 2 | PRE 4 | VIG 1",
+    pv: 12, san: 18,
+    password: "Peace_In_The_Storm_11",
+    hint: "— 'A paz encontrada no centro da tempestade, escrita no capítulo da perseverança do décimo primeiro verso.'",
+    pericias: ["<b>Religião</b>", "<b>Intuição</b>", "<b>Diplomacia</b>"],
+    personalidade: "Gentil, resiliente e altruísta.",
+    gostos: "Desenho, chá e coelhos.",
+    interesses: "Trazer esperança ao grupo."
+  },
+  steph: {
+    title: "Steph Arcane (Estrategista)",
+    sub: "A Mestre",
+    img: "img/Icon-Steph.jpeg",
+    bg: "img/5.jpeg",
+    desc: "Mestra nata, Steph enxerga o mundo como um jogo. Ela combina criatividade artística com uma mente tática invejável.",
+    attr: "AG 2 | FOR 1 | INT 3 | PRE 3 | VIG 1",
+    pv: 16, san: 14,
+    password: "D20_Critical_Arcadia",
+    hint: "— 'O destino decidido por vinte faces, em um golpe crítico que ressoa pelas ruas de Arcadia.'",
+    pericias: ["<b>Estratégia</b>", "<b>Artes</b>", "<b>Tecnologia</b>"],
+    personalidade: "Criativa, confiante e direta.",
+    gostos: "RPG de mesa, sintetizadores e música.",
+    interesses: "Orquestrar o sucesso da equipe."
   }
 };
 
-// Abre o modal de senha
+// Funções de Interface
 function askPassword(charKey) {
   currentSelectedChar = charKey;
   const modal = document.getElementById('password-modal');
@@ -57,17 +87,15 @@ function askPassword(charKey) {
   const inputEl = document.getElementById('pass-input');
   
   hintEl.innerText = characters[charKey].hint;
-  inputEl.value = ""; // Limpa o input
+  inputEl.value = ""; 
   modal.style.display = 'flex';
   inputEl.focus();
 }
 
-// Fecha o modal
 function closeModal() {
   document.getElementById('password-modal').style.display = 'none';
 }
 
-// Confirma a senha
 function confirmPassword() {
   const input = document.getElementById('pass-input').value;
   const char = characters[currentSelectedChar];
@@ -81,7 +109,6 @@ function confirmPassword() {
   }
 }
 
-// Renderiza a ficha
 function renderSheetContent(charKey) {
   const char = characters[charKey];
   const container = document.getElementById('char-sheet');
